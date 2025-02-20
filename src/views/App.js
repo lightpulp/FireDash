@@ -1,16 +1,22 @@
 import { StatusBar } from 'expo-status-bar';
-import {StyleSheet, Button, View, Text, Alert} from 'react-native';
+import { View, Text, Button, TouchableOpacity } from 'react-native';
+import { useCurrentTime } from '../functions/functions';
+import Clock from "react-live-clock";
 import styles from '../styles/styles';
 
 export default function App() {
-  
-  let currentTime = new Date();
-  
+
   return (
     <View style={styles.container}>
-      <Text>{currentTime.getHours()}:{currentTime.getMinutes()}</Text>
+      <Clock style={styles.text} element={Text} />
+      
+      <TouchableOpacity style={{ width:200, height: 20, marginTop: 10, backgroundColor:'#000000'}}>
+          <Text style={{color:'#FFFFFF'}}>HOME BUTTON</Text>
+      </TouchableOpacity>
 
-      <Button title="Learn More"/>
+
+      {/* HIDE STATUS BAR */}
+      <StatusBar hidden={true} />
     </View>
   );
 }

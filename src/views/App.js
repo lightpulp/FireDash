@@ -1,22 +1,25 @@
 import { StatusBar } from 'expo-status-bar';
-import { View, Text, Button, TouchableOpacity } from 'react-native';
-import { useCurrentTime } from '../functions/functions';
-import Clock from "react-live-clock";
+import { View, Text, TouchableOpacity } from 'react-native';
 import styles from '../styles/styles';
 
-export default function App() {
-
+export default function HomeScreen({ navigation }) { // Receive navigation prop
   return (
     <View style={styles.container}>
-      <Clock style={styles.text} element={Text} />
-      
-      <TouchableOpacity style={{ width:200, height: 20, marginTop: 10, backgroundColor:'#000000'}}>
-          <Text style={{color:'#FFFFFF'}}>HOME BUTTON</Text>
+
+      <TouchableOpacity onPress={() => navigation.navigate('Screen_Music')}> 
+        <Text style={styles.buttonText}>MUSIC</Text>
       </TouchableOpacity>
 
+      <TouchableOpacity onPress={() => navigation.navigate('Screen_Speedometer')}> 
+        <Text style={styles.buttonText}>SPEEDOMETER</Text>
+      </TouchableOpacity>
 
-      {/* HIDE STATUS BAR */}
+      <TouchableOpacity onPress={() => navigation.navigate('Screen_Clock')}> 
+        <Text style={styles.buttonText}>CLOCK</Text>
+      </TouchableOpacity>
+
       <StatusBar hidden={true} />
+
     </View>
   );
 }

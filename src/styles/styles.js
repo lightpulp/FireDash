@@ -3,9 +3,10 @@ import { StyleSheet } from 'react-native';
 const homeStyles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
     backgroundColor: '#000000',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   text: {
     fontSize: 50,
@@ -13,19 +14,25 @@ const homeStyles = StyleSheet.create({
     fontFamily: 'sans-serif-medium',
     fontWeight: 'bold',
   },
-  homeButton: {
-    position: 'absolute',
-    top: 20,
-    right: 20,
-    backgroundColor: '#444',
-    paddingVertical: 10,
-    paddingHorizontal: 20,
-    borderRadius: 10,
+
+  nav_button: {
+    backgroundColor: '#222',
+    margin: 10,
+    padding: 10,
+    borderRadius: 30,
+    width: '100',
+    height: '100',
   },
-  buttonText: {
-    color: '#FFFFFF',
-    fontWeight: 'bold',
-    fontSize: 16,
+
+  nav_button_icon: {
+    width: '100%',
+    height: '100%',
+    tintColor: '#FFFFFF',
+  },
+
+  nav_button_icon_logo: {
+    width: '100%',
+    height: '100%',
   },
 });
 
